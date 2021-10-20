@@ -6,22 +6,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Component
 @Setter
 @Getter
 @AllArgsConstructor
-public class Mesh {
+@NoArgsConstructor
+public class Transaction {
 
-    List<Node> nodes ;
+    private String sender;
 
-    public Mesh() {
-        nodes = new ArrayList<>();
-    }
+    private String recipient;
 
-    public void registerNode(Node node) {
-        nodes.add(node);
-    }
+    private Long amount;
 }

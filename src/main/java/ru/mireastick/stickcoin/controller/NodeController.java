@@ -1,17 +1,13 @@
 package ru.mireastick.stickcoin.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import ru.mireastick.stickcoin.model.Node;
+import org.springframework.web.bind.annotation.*;
+import ru.mireastick.stickcoin.model.p2p.Node;
+import ru.mireastick.stickcoin.model.Transaction;
 import ru.mireastick.stickcoin.service.NodeService;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("nodes")
+@RestController
 public class NodeController {
 
     private final NodeService nodeService;
@@ -20,11 +16,22 @@ public class NodeController {
         this.nodeService = nodeService;
     }
 
-    @GetMapping(value = "/{id}", produces = "application/json")
-    public @ResponseBody
-    List<Node> getNodes(@PathVariable int id) {
+    @GetMapping(path = "nodes", produces = "application/json")
+    @ResponseBody
+    public List<Node> getNodes() {
         return nodeService.getNodes();
     }
 
+    @PostMapping(path="add")
+    @ResponseBody
+    public Node registerNode(@RequestBody Node node) {
+        return node;
+    }
+
+    @PostMapping(path="transactions/new")
+    @ResponseBody
+    public String newTransaction(@RequestBody Transaction transaction) {
+        return "We'll add a new transaction";
+    }
 
 }

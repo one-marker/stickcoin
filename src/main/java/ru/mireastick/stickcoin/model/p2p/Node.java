@@ -1,4 +1,4 @@
-package ru.mireastick.stickcoin.model;
+package ru.mireastick.stickcoin.model.p2p;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,8 +13,6 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 public class Node {
 
-    private String description;
-
     private String remoteHost;
 
     private String externalPort;
@@ -24,5 +22,8 @@ public class Node {
     private String internalClient;
 
     private Boolean enabled = true;
+
+    private String description;
+
 
 }
