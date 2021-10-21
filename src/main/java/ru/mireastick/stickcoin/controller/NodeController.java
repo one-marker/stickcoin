@@ -2,7 +2,7 @@ package ru.mireastick.stickcoin.controller;
 
 import org.springframework.web.bind.annotation.*;
 import ru.mireastick.stickcoin.model.p2p.Node;
-import ru.mireastick.stickcoin.model.Transaction;
+import ru.mireastick.stickcoin.model.blockchain.Transaction;
 import ru.mireastick.stickcoin.service.NodeService;
 
 import java.util.List;

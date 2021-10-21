@@ -1,4 +1,4 @@
-package ru.mireastick.stickcoin.model;
+package ru.mireastick.stickcoin.model.blockchain;
 
 import com.google.common.hash.Hashing;
 import lombok.AllArgsConstructor;
@@ -21,12 +21,11 @@ public class Block {
 
     private Date timestamp;
 
-    private String transactions;
+    private Transaction transactions;
 
     private String proof;
 
     private String previousHash;
-
 
     @Override
     public String toString() {
