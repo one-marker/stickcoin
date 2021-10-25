@@ -21,7 +21,7 @@ public class Block {
 
     private Date timestamp;
 
-    private Transaction transactions;
+   // private Transaction transactions;
 
     private String proof;
 
@@ -32,7 +32,7 @@ public class Block {
         return "{" +
                 "index=" + index +
                 ", timestamp=" + timestamp +
-                ", transactions='" + transactions + '\'' +
+               // ", transactions='" + transactions + '\'' +
                 ", proof='" + proof + '\'' +
                 ", previousHash='" + previousHash + '\'' +
                 '}';

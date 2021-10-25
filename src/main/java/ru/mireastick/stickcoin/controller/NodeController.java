@@ -2,7 +2,7 @@ package ru.mireastick.stickcoin.controller;
 
 import org.springframework.web.bind.annotation.*;
 import ru.mireastick.stickcoin.model.p2p.Node;
-import ru.mireastick.stickcoin.model.blockchain.Transaction;
+
 import ru.mireastick.stickcoin.service.NodeService;
 
 import java.util.List;
@@ -16,7 +16,7 @@ public class NodeController {
         this.nodeService = nodeService;
     }
 
-    @GetMapping(path = "nodes", produces = "application/json")
+    @GetMapping(path = "nodes", produces = "text/plain")
     @ResponseBody
     public List<Node> getNodes() {
         return nodeService.getNodes();
@@ -28,10 +28,10 @@ public class NodeController {
         return node;
     }
 
-    @PostMapping(path="transactions/new")
-    @ResponseBody
-    public String newTransaction(@RequestBody Transaction transaction) {
-        return "We'll add a new transaction";
-    }
+//    @PostMapping(path="transactions/new")
+//    @ResponseBody
+//    public String newTransaction(@RequestBody Transaction transaction) {
+//        return "We'll add a new transaction";
+//    }
 
 }
